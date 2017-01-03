@@ -58,3 +58,31 @@ t.test(x,mu=110,conf.int=0.99,alternative="less")
 #conclusion: the IQ average of the 1000 students is less than 110.
 
 
+#EXAMPLE 2: Confidence intervals for difference of means
+
+#Two simple random samples are selected from two universities, 15 from the first and 20 from the second.
+#A test is applied to both samples. The average score of sample one is 1000 with standard deviation 100, and the average score of sample two is 950 with standard deviation 90.
+#Choose a 90% confidence interval.
+
+#In order to apply t.test(), I need the actual scores of both samples. I use the function lista() which I defined in example 1.
+
+x1 <- lista(15,1000,100)
+x2 <- lista(20,950,90)
+
+t.test(x1,x2,conf.level=0.90)
+
+##> t.test(x1,x2,conf.level=0.90)
+##        Welch Two Sample t-test
+##data:  x1 and x2
+##t = 1.5274, df = 28.442, p-value = 0.1377
+##alternative hypothesis: true difference in means is not equal to 0
+##90 percent confidence interval:
+##  -5.659164 105.659164
+##sample estimates:
+##mean of x mean of y 
+##     1000       950 
+
+#conclusion: we are 90% confident that the real difference between the average score of students in the first university and the average score of students in the second university lies between -5.659164 and 105.659164.
+
+ 
+
