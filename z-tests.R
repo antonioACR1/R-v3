@@ -44,7 +44,7 @@ prop.test(x=73,n=100,p=0.8,alternative="less",correct=F)
 #the p-value is less than 0.05, so we reject the null hypothesis.
 #Conclusion: our sample seems to suggest that the company's claim is false, so that the proportion of satisfied customers is <0.8.
 
-EXAMPLE 3: two sample z-test 
+#EXAMPLE 3: two sample z-test 
 
 #A company develops a new drug to prevent colds. They claim that this drug is equally effective in men and women. 
 #From 100000 volunteers, they select 100 women and 200 men, but 38% of the sampled women caught a cold (after taking the drug) and 51% of the sampled men caught a cold (after taking the drug).
