@@ -76,3 +76,47 @@ qwilcox(0.05/2,n=5,m=5)
 #in my case, W=3 > critical value=2, so do not reject the null hypothesis
 
 #we get the same conclusion as before
+
+
+#EXAMPLE 2: Kruskal-Wallis test
+
+#there are three protein diets applied to 3,5 and 4 persons, respectively
+#the albumim levels of each person are measured after applying the protein. The following code shows this information:
+
+g1 <- c(3.1,2.6,2.9)
+g2 <- c(3.8,4.1,2.9,3.4,4.2)
+g3 <- c(4.0,5.5,5.0,4.8)
+
+dati <- list(five.percent.protein=g1, ten.percent.protein=g2, fifteen.percent.protein=g3)
+
+##> dati
+##$five.percent.protein
+##[1] 3.1 2.6 2.9
+##$ten.percent.protein
+##[1] 3.8 4.1 2.9 3.4 4.2
+##$fifteen.percent.protein
+##[1] 4.0 5.5 5.0 4.8
+
+#null hypothesis: the albumim levels are equal among the three groups, no matter which protein diet is used
+#alternative hypothesis: the albumim level are not equal among the three groups, so the specific diet is important
+#significance level: 0.05
+
+kruskal.test(dati)
+##> kruskal.test(dati)
+##        Kruskal-Wallis rank sum test
+##data:  dati
+##Kruskal-Wallis chi-squared = 7.5495, df = 2, p-value = 0.02294
+
+#the p-value is less than 0.05, so reject the null hypothesis
+#conclusion: the albumim levels aro not equal among the three groups
+
+#another way to conclude is given as follows
+
+#the degrees of freedom is 2, the significance level is 0.05, so the critical value is:
+
+qchisq(0.95,2)
+
+##> qchisq(0.95,2)
+##[1] 5.991465
+
+#the critical value is less than the test statistic (7.5495), so reject the null hypothesis and conclude as before
