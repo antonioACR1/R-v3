@@ -74,9 +74,7 @@ qwilcox(0.05/2,n=5,m=5)
 
 #rule: if the critical value test statistic is < the critical value, then reject the null hypothesis, otherwise do not reject the null hypothesis
 #in my case, W=3 > critical value=2, so do not reject the null hypothesis
-
 #we get the same conclusion as before
-
 
 #EXAMPLE 2: Kruskal-Wallis test
 
